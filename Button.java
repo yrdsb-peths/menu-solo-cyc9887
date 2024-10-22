@@ -1,24 +1,27 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Button here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Button extends Actor
 {
-    /**
-     * Act - do whatever the Button wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+    private Runnable action;
+    public Button()
     {
-        // Add your action code here.
+        GreenfootImage image = new GreenfootImage("images/buttonLong_beige.png");
+        setImage(image);
     }
     
-    public void pressButton()
+    public Button(Runnable action)
     {
-        
+        this.action = action;
+        GreenfootImage image = new GreenfootImage("images/buttonLong_beige.png");
+        setImage(image);
+    }
+
+    public void act() {
+        if (Greenfoot.mouseClicked(this))
+        {
+            if (action != null) {
+                action.run();
+            }
+        }
     }
 }
