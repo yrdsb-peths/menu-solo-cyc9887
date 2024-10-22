@@ -1,8 +1,8 @@
-public class QueueOfStrings{
+public class Queue<T>{
     private Node first, last;
-    private class Node{ String item; Node next; }
+    private class Node{ T item; Node next; }
     public boolean isEmpty() { return (first == null); }
-    public void enqueue(String item) {
+    public void enqueue(T item) {
         Node oldLast = last;
         last = new Node();
         last.item = item;
@@ -10,8 +10,8 @@ public class QueueOfStrings{
         if (isEmpty())  first = last;
         else            oldLast.next = last;
     }
-    public String dequeue() {
-        String item = first.item;
+    public T dequeue() {
+        T item = first.item;
         first = first.next;
         if (isEmpty())  first = last;
         return item;

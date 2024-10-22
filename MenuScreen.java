@@ -22,6 +22,9 @@ public class MenuScreen extends World
     private void prepare()
     {
         Label label = new Label("Menu", 40);
-        addObject(label,300,100);
+        addObject(label,300,50);
+
+        AvatarManager am = new AvatarManager();
+        addObject(am, 300, 200);
     }
 }
