@@ -44,12 +44,12 @@ public class InstructionScreen extends World
     
         public void act()
     {
-        if (Greenfoot.mouseClicked(getObjects(Button.class).get(0))) // Previous button
+        if (Greenfoot.mouseClicked(getObjects(Button.class).get(0)))
         {
             prevPage(prev);
         }
         
-        if (Greenfoot.mouseClicked(getObjects(Button.class).get(1))) // Next button
+        if (Greenfoot.mouseClicked(getObjects(Button.class).get(1)))
         {
             nextPage(next);
         }
